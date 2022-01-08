@@ -1,0 +1,51 @@
+baseurl = "https://nando-ing.github.io"
+title = "Fernando Vasconcelos"
+theme = "HugoTeX"
+languageCode = "en-us"
+paginate = 3 #frontpage pagination
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+[author]
+  name = "Fernando Vasconcelos"
+  abstract = "Surfer, Skier, Body Builder, and, oh yeah, Control Engineer and Data Scientist Enthusiast."
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  header_image = "images/main_go_wideandtall_darklayer.jpeg"
+  title = "Data Scientist"
+  slogan = "$ grep -rni \"The how's and why's\" ."
+  SEOTitle = "My Knowledge"
+  keyword = "Fernando, Vasconcelos, Raspberry, Pi, Julia, Python, Signal Processing, Tensorflow, Spark, Pandas, Matlab"
+ 
+  # Sidebar settings
+  sidebar_avatar = "images/MeAtJackson.jpeg"
+  about_me = true
+
+  featured_tags = true 
+  featured_condition_size = 2 # How many posts have to have a given tag to be featured (greater-than)
+
+  title_404 = "We couldn't find what you were looking for..."
+
+  omit_categories = false
+
+  [[params.addtional_menus]]
+  title =  "ABOUT"
+  href =  "/top/about/"
+
+  [params.social]
+  rss            = true
+  email          = "fernandopv@alu.ufc.br"
+  linkedin       = "https://www.linkedin.com/in/fpinheir"
+  github         = "https://github.com/nando-ing"
+  stackoverflow  = "https://stackoverflow.com/users/16654062/nando-ing"

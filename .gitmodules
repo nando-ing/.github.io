@@ -1,0 +1,3 @@
+[submodule "site_root/themes/HugoTeX"]
+	path = site_root/themes/HugoTeX
+	url = https://github.com/HelloRusk/HugoTeX.git
