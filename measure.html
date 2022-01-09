@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Measure Theory Basics </title>
+        <link rel="stylesheet" href="https://latex.now.sh/style.css">
+    </head>
+
+    
+    <body>
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a> <hr>
+        </div>
+        <header>
+            <h1> Measure Theory </h1>
+            <p class="author">
+                Fernando de Vasconcelos <br>
+                January 2022
+            </p>
+        </header>
+        <div class="abstract">
+            <h2> Abstract </h2>
+            Measure Theory is an area devoted to study the size of sets and what
+            set is "relevant" for certain operations.
+            <hr>
+        </div>
+        <p>
+        \subsection{Measure Theory}
+        Measure Theory was created as an attempt generalise the <em>size</em> of a set. For example:
+        <ul>
+            <li> An interval $(a,b) \subset \mathbb{R}$ has size $(b-a)$ </li>
+            <li> 
+                A rectangle $(a_1,b_1) \times (a_2, b_2) \subset \mathbb{R}^2$ 
+                has size $(b_1 - a_1)(b_2 - a_2)$ 
+            </li>
+            <li> A n-dimensional rectangle $(a_1,b_1) \times \cdots \times 
+                (a_n, b_n) \subset \mathbb{R}^n$ has size $(b_1 - a_1) \hdots 
+                (b_n - a_n)$ 
+            </li>
+        </ul>
+        
+        As one can see, the concept of <em>size</em> is a generalisation of "volume".
+        The sets in the example are all trivial ones, this concept is used to 
+        deal with highly complex set cases, for example, the Cantor set or the 
+        Image of a Dirichlet function.
+        
+        We can already note that the main objective is to obtain a function 
+        $\mu: \mathcal{F} \to \mathbb{R} \cup \{+\infty\}$, where $\mathcal{F}$
+        is a collection of sets, where $\mu$ should have the same desirable 
+        properties of the classical size of a set, as we can see in 
+        <strong>Definition \ref{def:measure_function}</strong>.
+        </p>
+        </div>
+        <script>
+            MathJax = {
+            tex: {
+                inlineMath: [['$', '$'],],
+            },
+            }
+            const toggle = document.getElementById('typeface-toggle')
+            const typeface = document.getElementById('typeface')
+            toggle.addEventListener('click', () => {
+            document.body.classList.toggle('libertinus')
+            typeface.textContent = document.body.classList.contains('libertinus') ? 'Libertinus' : 'Latin Modern'
+            })
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+
+</html>
