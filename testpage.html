@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My knowledge</title>
+        <link rel="stylesheet" href="https://latex.now.sh/style.css">
+    </head>
+
+    
+    <body>
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a> <hr>
+        </div>
+        <header>
+            <h1> Bhaskara Formula</h1>
+            <p class="author">
+                Fernando de Vasconcelos <br>
+                January 2022
+            </p>
+        </header>
+        <div class="abstract">
+            <h2> Abstract </h2>
+            The Bhaskara formula allow us to find the roots of a 
+            second degree polynomial.
+            <hr>
+        </div>
+            
+            <p>
+                Let us proof our first theorem: The bhaskara formula:
+                <div class="theorem">
+                    Let $p(x) = ax^2 + bx + c$ be a degree two polynomial, then its
+                    roots are given by the formula:
+                    $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+                </div>
+                <div class=proof>
+                    The key idea is to make several algebraic manipulations to transform the right hand side into a perfect square:
+                    $$ ax^2 + bx + c = 0 \Leftrightarrow $$
+                    $$ \Leftrightarrow 4a^2x^2 + 4abx + 4ac = 0 $$
+                    $$ \Leftrightarrow 4a^2x^2 + 4abx + b^2 = b^2 - 4ac$$
+                    $$ \Leftrightarrow (2ax + b)^2 = b^2 - 4ac$$
+                    $$ \Leftrightarrow (2ax + b) = \pm \sqrt{b^2 - 4ac}$$
+                    $$ \Leftrightarrow x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+                </div>
+            </p>
+        </div>
+        <script>
+            MathJax = {
+            tex: {
+                inlineMath: [['$', '$'],],
+            },
+            }
+            const toggle = document.getElementById('typeface-toggle')
+            const typeface = document.getElementById('typeface')
+            toggle.addEventListener('click', () => {
+            document.body.classList.toggle('libertinus')
+            typeface.textContent = document.body.classList.contains('libertinus') ? 'Libertinus' : 'Latin Modern'
+            })
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+
+</html>
