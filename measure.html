@@ -3,9 +3,12 @@
     <head>
         <title> Measure Theory Basics </title>
         <link rel="stylesheet" href="https://latex.now.sh/style.css">
+        <style type="text/css">
+            body {
+                max-width: 50vw;
+            }
+        </style>
     </head>
-
-    
     <body>
         <div class="topnav">
             <a class="active" href="index.html">Home</a> <hr>
@@ -20,36 +23,108 @@
         <div class="abstract">
             <h2> Abstract </h2>
             Measure Theory is an area devoted to study the size of sets and what
-            set is "relevant" for certain operations.
+            set is "relevant" for certain operations. As an example, we have
+            the integral, <em>i.e.</em>, the sets which have null measure, the integral
+            over this set is zero for all bounded functions.
             <hr>
         </div>
         <p>
-        <h1>Measure Theory</h1>
-        Measure Theory was created as an attempt generalise the <em>size</em> of a set. For example:
-        <ul>
-            <li> An interval $(a,b) \subset \mathbb{R}$ has size $(b-a)$ </li>
-            <li> 
-                A rectangle $(a_1,b_1) \times (a_2, b_2) \subset \mathbb{R}^2$ 
-                has size $(b_1 - a_1)(b_2 - a_2)$ 
-            </li>
-            <li> A n-dimensional rectangle $(a_1,b_1) \times \cdots \times 
-                (a_n, b_n) \subset \mathbb{R}^n$ has size $(b_1 - a_1) \hdots 
-                (b_n - a_n)$ 
-            </li>
-        </ul>
+            <h1>Measure Theory</h1>
+            Measure Theory was created as an attempt generalise the <em>size</em> of a set. For example:
+            <ul>
+                <li> An interval $(a,b) \subset \mathbb{R}$ has size $(b-a)$ </li>
+                <li> 
+                    A rectangle $(a_1,b_1) \times (a_2, b_2) \subset \mathbb{R}^2$ 
+                    has size $(b_1 - a_1)(b_2 - a_2)$ 
+                </li>
+                <li> A n-dimensional rectangle $(a_1,b_1) \times \cdots \times 
+                    (a_n, b_n) \subset \mathbb{R}^n$ has size $(b_1 - a_1) ... 
+                    (b_n - a_n)$ 
+                </li>
+            </ul>
+            
+            As one can see, the concept of <em>size</em> is a generalisation of "volume".
+            The sets in the example are all trivial ones, this concept is used to 
+            deal with highly complex set cases, for example, the Cantor set or the 
+            Image of a Dirichlet function.
+            
+            We can already note that the main objective is to obtain a function 
+            $\mu: \mathcal{F} \to \mathbb{R} \cup \{+\infty\}$, where $\mathcal{F}$
+            is a collection of sets, where $\mu$ should have the same desirable 
+            properties of the classical size of a set, as we can see in the following
+
+            <div id="def:measure" class="definition">
+                Let $\mathcal{F}$ be a collection of sets. We define a measure to
+                the collection $\mathcal{F}$ as a function $\mu: \mathcal{F} \to 
+                \mathbb{R}_+ \cup \{+\infty\}$, obeying the following properties:
+                <ol>
+                    <li> $\mu (X) \geq 0,  \forall \; X \in \mathcal{F}$; </li>
+                    <li> $\mu (\varnothing) = 0$; </li>
+                    <li> $X_i, X_j \in \mathcal{F}$, with $X_i \cap X_j,  \forall
+                        \; i,j \in \mathbb{N} \Rightarrow \mu 
+                        (\bigcup_{i = 1}^{+\infty} X_i) = 
+                        \sum_{i = 1}^{+\infty}\mu(X_i)$.
+                    </li>
+                </ol>
+            </div>
+
+            As we shall see, there are certain conditions we have to obey for this 
+            function $\mu$ can exist in an useful way.
+
+            <div id="def:sigma-algebra" class="definition">
+                Given a collection of sets $\mathcal{F} \subset \mathcal{P} (A)$, 
+                we call it a $\sigma$-algebra on A if it satisfies the following three properties:
+                <ol>
+                    <li> $\varnothing, A \in \mathcal{F}$</li>
+                    
+                    <li> $A \in \mathcal{F} \Rightarrow A^c \in \mathcal{F}$</li>
+                    
+                    <li> 
+                        $A_n \in \mathcal{F}, \; \forall \, n \in \mathbb{N} 
+                        \Rightarrow \bigcup _{n=1} ^{\infty} 
+                        A_n = A' \in \mathcal{F}$
+                    </li>
+                </ol>
+                $A \in \mathcal{F}$ is then called a $\mathcal{F}$-measurable set.
+            </div>
+
+
+            Then can easily prove the following result:
+
+            <div class="corollary">
+                Let $\mathcal{F}_i$ be a $\sigma$-algebra over $A, \forall \; i \in \mathbb{N}$. Then we have that:
+                
+                $$\mathcal{F} = \bigcap_{i = 1} ^{\infty} \mathcal{F}_i$$ is also a $\sigma$-algebra over $A$
+            </div>
+
+            <div class="theorem">
+                Let $\mathcal{F}' \subset \mathcal{P}(A)$, there exists the smallest $\sigma$-algebra that contains $\mathcal{F}'$:
+                $$ \sigma(\mathcal{F}') := \bigcap_{\mathcal{F} \supset \mathcal{F}'} \mathcal{F}$$
+                Where the intersection is over all the $\sigma$-algebras $\mathcal{F}$. The $\sigma (\mathcal{F})$ is also called the $\sigma$-algebra generated by $\mathcal{F}$.
+            </div>
+
+            <div class="corollary">
+                Let $\mathcal{A} \subset \mathcal{P}(A)$ be a collection. $\Sigma_\mathcal{A} \subset \mathcal{P}(A)$ is a $\sigma$-algebra generated from $\mathcal{A}$ if, and only if:
+                <ol>
+                    <li> $\Sigma_\mathcal{A}$ is a $\sigma$-algebra; </li> 
+                    <li> $\mathcal{A} \subset \Sigma_\mathcal{A}$; </li> 
+                    <li> If $\Sigma \supset \mathcal{A}$ is a $\sigma$-algebra, then $\Sigma_\mathcal{A} \subset \Sigma$.</li> 
+                </ol>
+            </div>
+
+            <div class="definition">
+                Let $(X,\mathcal{T})$ be a topological space. A Borel $\sigma$-algebra is a $\sigma$-algebra generated from a family of open sets from $(X, \mathcal{T})$. Its elements are known as Borel sets or Borelians.
+            </div>
+
+            <div class="definition">
+                Let $A$ be a set and $\mathcal{F} \subset \mathcal{P}(A)$ a $\sigma$-algebra. A measurable space is a pair $(A,\mathcal{F})$.
+            </div>
+
+            <div class="definition">
+                Let $A$ be a set, $\mathcal{F} \subset \mathcal{P}(A)$ a $\sigma$-algebra and $\mu: \mathcal{F} \to [0,\infty]$ a measure function. A measure space is the triple $(A,\mathcal{F},\mu)$.
+            </div>
         
-        As one can see, the concept of <em>size</em> is a generalisation of "volume".
-        The sets in the example are all trivial ones, this concept is used to 
-        deal with highly complex set cases, for example, the Cantor set or the 
-        Image of a Dirichlet function.
-        
-        We can already note that the main objective is to obtain a function 
-        $\mu: \mathcal{F} \to \mathbb{R} \cup \{+\infty\}$, where $\mathcal{F}$
-        is a collection of sets, where $\mu$ should have the same desirable 
-        properties of the classical size of a set, as we can see in 
-        <strong>Definition \ref{def:measure_function}</strong>.
         </p>
-        </div>
         <script>
             MathJax = {
             tex: {
