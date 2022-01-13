@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My knowledge</title>
+        <link rel="stylesheet" href="https://latex.now.sh/style.css">
+        <style type="text/css">
+            body {
+                max-width: 50vw;
+            }
+        </style>
+    </head>
+
+    
+    <body>
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a> <hr>
+        </div>
+        <header>
+            <h1> Functional Analysis </h1>
+            <p class="author">
+                Fernando de Vasconcelos <br>
+                January 2022
+            </p>
+        </header>
+        <div class="abstract">
+            <h2> Abstract </h2>
+                Functional Analysis is the branch of mathematics
+                which studies infinite dimensional vector spaces. This 
+                field have important results which affects other branchs
+                such as Signal Processing, Control Theory, Partial 
+                Differential Equations, Quantum Mechanics and the list 
+                goes on...
+            <hr>
+        </div>
+        <p>
+            In Linear Algebra we study several types of <em>Vector Spaces</em>,
+            but we are focus only in the finite dimensional case. We may see
+            during a good Linear Algebra course some examples of Infinite dimensional
+            spaces, but they are not really the main object of study.
+        </p>
+        <p>
+            The differences from the finite dimensional to infinite dimensional
+            are quite significant and that is the reason it is separated in two
+            different courses. We will see that many results that holds in both
+            finite dimensional and infinite dimensional cases, but there are 
+            crucial results that differs and we may see the consequences from
+            those differences.
+        </p>
+        <p>
+            We start the theory recalling the definition of <em>Vector Spaces</em>:
+            <div class="definition">
+                A vector space is a non-empty set $V$ endowed with two operations
+                $ +: V \times V \to V $ and $ \cdot: \mathbb{F} \times V \to V $,
+                satisfying the following axioms:
+                <ol>
+                    <li>
+                        $ +: V \times V \to V $ is commutative, that is, for 
+                        $u,v \in V$, $u + v = v + u$.
+                    </li>
+                </ol>
+            </div>
+        </p>
+        
+        <script>
+            MathJax = {
+            tex: {
+                inlineMath: [['$', '$'],],
+            },
+            }
+            const toggle = document.getElementById('typeface-toggle')
+            const typeface = document.getElementById('typeface')
+            toggle.addEventListener('click', () => {
+            document.body.classList.toggle('libertinus')
+            typeface.textContent = document.body.classList.contains('libertinus') ? 'Libertinus' : 'Latin Modern'
+            })
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+
+</html>
