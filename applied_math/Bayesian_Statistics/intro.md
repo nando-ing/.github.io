@@ -1,16 +1,21 @@
-# Welcome to your Jupyter Book
+# Why study Bayasian Statistics?
 
-This is a small sample book to give you a feel for how book content is
-structured.
+There are two main interpretations for probability the one, we call _Frequentist_
+and the other we call _Bayesianist_. The _frequentists_ believes that the probability
+comes from a random experiment, while the bayesianist believes that the probability
+also can stand for a measure of belief. This discussion for which interpretation
+should we use was there for a while until the work of R. T. Cox.
 
-:::{note}
-Here is a note!
-:::
+In 1946, R. T. Cox tried to find axioms to what we call Plausible Reasoning.
+The idea was to formalize how we reason with an incomplete set of information,
+affecting to each assertion a degree of belief according to some prior knowledge.
 
-And here is a code block:
+With the axioms Cox proposed, we can derive the Kolmogorov axioms for probability
+which was the base for the _frequentist_ interpretation of probability. From
+this result we can interpret the _Bayesian_ approach as a generalisation from
+the _frequentist_ one.
 
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
+R. T. Cox did not stop there. He showed that with his set of axioms there is 
+only one measure we can use to measure the degrees of belief, which is the one
+that coincides with the classical probability measure and if we choose another
+measure, we would have a system that is inconsistent.
